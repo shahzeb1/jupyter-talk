@@ -1,4 +1,5 @@
 def interactive_3d_plot():
+    "Make a 3d interactive plot"
     trace1 = go.Scatter3d(
         x=[3],
         y=[4],
