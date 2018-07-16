@@ -1,24 +1,33 @@
 def interactive_3d_plot():
-    "Make a 3d interactive plot"
-    trace1 = go.Scatter3d(
-        x=[3],
-        y=[4],
-        z=[5],
-        mode='markers',
-        marker=dict(
-            color='blue',
-            size=12,
-            symbol='circle',
-            line=dict(
-                color='rgba(217, 217, 217, 0.14)',
-                width=0.5
-            ),
-            opacity=0.6
+    data = [None] * number_of_clusters
+    
+    # Marker and color info 
+    marks_and_interactive = ["red", "circle"], ["blue", "diamond"]
+    
+    # Scatter points:
+    i = 0
+    for g in data_points:
+        group = go.Scatter3d(
+            x=g[:,0],
+            y=g[:,1],
+            z=g[:,2],
+            mode='markers',
+            name='Grouping {}'.format(i+1),
+            marker=dict(
+                color=marks_and_interactive[i][0],
+                size=12,
+                symbol=marks_and_interactive[i][1],
+                line=dict(
+                    color='rgba(217, 217, 217, 0.14)',
+                    width=0.5
+                ),
+                opacity=0.6
+            )
         )
-    )
+        data[i] = group
+        i = i + 1
     
-    data = [trace1]
-    
+    # The layout for the plot:
     layout = go.Layout(
         margin=dict(
             l=0,
