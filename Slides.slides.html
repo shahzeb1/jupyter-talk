@@ -11908,7 +11908,7 @@ a.anchor-link {
 <h1 id="Improving-Your-Workflow-with-Jupyter-Notebooks">Improving Your Workflow with Jupyter Notebooks<a class="anchor-link" href="#Improving-Your-Workflow-with-Jupyter-Notebooks">&#182;</a></h1><p>A talk by <strong>Shahzeb Khan</strong>.</p>
 <p>Part of <strong>Dr. Crivelli</strong>'s Lab.</p>
 <p>UC Davis Computer Science Student.</p>
-<p>Email: mnkhan@ucdavis.edu</p>
+<p>📧 Email: mnkhan@ucdavis.edu</p>
 <p>🚨 
 Slides and code: <strong><a href="http://tiny.cc/jupyter-cori">tiny.cc/jupyter-cori</a></strong></p>
 
@@ -12085,7 +12085,7 @@ jupyter notebook --no-browser --port <span class="m">9998</span>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Our-Notebook:">Our Notebook:<a class="anchor-link" href="#Our-Notebook:">&#182;</a></h1><ul>
-<li>Genereate the data</li>
+<li>Genereate some data</li>
 <li>Visualize it</li>
 <li>Interactive visualization</li>
 <li>Tensorflow + Tensorboard</li>
@@ -12201,7 +12201,7 @@ jupyter notebook --no-browser --port <span class="m">9998</span>
 </div>
 </div>
 
-</div></div></section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
@@ -12235,6 +12235,109 @@ jupyter notebook --no-browser --port <span class="m">9998</span>
 </div>
 </div>
 
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Use-Pickle:">Use Pickle:<a class="anchor-link" href="#Use-Pickle:">&#182;</a></h4><p><code>pickle</code> is a great built in package to store large data arrays (or any datatype) to the disk.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span> <span class="k">as</span> <span class="nn">pkl</span>
+<span class="k">def</span> <span class="nf">save_pickle_file</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="s2">&quot;Save out the data as a pickle file&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{}</span><span class="s2">.pkl&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pickle_file</span><span class="p">:</span>
+        <span class="n">pkl</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">pickle_file</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">load_pickle_file</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="s2">&quot;Get the value from the pickle file and set it as the variable value&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output/</span><span class="si">{}</span><span class="s2">.pkl&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">pickle_file</span><span class="p">:</span>        
+        <span class="nb">globals</span><span class="p">()[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pkl</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">pickle_file</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">save_pickle_file</span><span class="p">(</span><span class="s2">&quot;actors_data&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">load_pickle_file</span><span class="p">(</span><span class="s2">&quot;actors_data&quot;</span><span class="p">)</span>
+<span class="n">actors_data</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[&#39;leo dicaprio&#39;, &#39;43&#39;],
+       [&#39;angelina jolie&#39;, &#39;43&#39;],
+       [&#39;brad pitt&#39;, &#39;54&#39;]], dtype=&#39;&lt;U14&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Helpful-tools:">Helpful tools:<a class="anchor-link" href="#Helpful-tools:">&#182;</a></h2><ol>
+<li>Use <a href="https://plot.ly/python/ipython-notebook-tutorial/">NBViewer</a> to view your Jupyter notebooks via Git.</li>
+<li>Use <a href="https://plot.ly/python/ipython-notebook-tutorial/">Plot.ly</a> for interactive graphs.</li>
+<li>Use <a href="http://rawgit.com/">Raw Git</a> to host .html files.</li>
+</ol>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Thank-you">Thank you<a class="anchor-link" href="#Thank-you">&#182;</a></h3><h2 id="&#128680;-tiny.cc/jupyter-cori">&#128680; tiny.cc/jupyter-cori<a class="anchor-link" href="#&#128680;-tiny.cc/jupyter-cori">&#182;</a></h2><p>Any questions?</p>
+<p>📧 mnkhan@ucdavis.edu</p>
+
+</div>
+</div>
 </div>
 </div>
 </div>
