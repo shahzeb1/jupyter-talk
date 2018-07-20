@@ -32,3 +32,5 @@ Make some minor changes to the `.py` file:
 ```
 jupyter nbconvert --to slides Slides.ipynb --reveal-prefix "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0"
 ```
+
+[My iTerm config](https://gist.github.com/kevin-smets/8568070)
