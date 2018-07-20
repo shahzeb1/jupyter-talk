@@ -11949,6 +11949,15 @@ Slides and code: <strong><a href="http://tiny.cc/jupyter-cori">tiny.cc/jupyter-c
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goal:">Goal:<a class="anchor-link" href="#Goal:">&#182;</a></h2><p>Get a Jupyter Notebook environment up and running on CORI → how to get custom packages installed → how to integrate with tools like TensorBoard right within the Notebook → how to collaborate with your team using git</p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Code-vs.-Jupyter">Code vs. Jupyter<a class="anchor-link" href="#Code-vs.-Jupyter">&#182;</a></h2><p><img src="images/code-and-jupyter.png" alt="code vs jupyter" title="Code vs. Jupyter"></p>
 
 </div>
@@ -12045,7 +12054,7 @@ $y=mx+b$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Getting-setup-on-CORI">Getting setup on CORI<a class="anchor-link" href="#Getting-setup-on-CORI">&#182;</a></h1><h3 id="Goals:">Goals:<a class="anchor-link" href="#Goals:">&#182;</a></h3><ol>
+<h1 id="Getting-set-up-on-CORI">Getting set up on CORI<a class="anchor-link" href="#Getting-set-up-on-CORI">&#182;</a></h1><h3 id="Goals:">Goals:<a class="anchor-link" href="#Goals:">&#182;</a></h3><ol>
 <li>Create a Python environment</li>
 <li>Connect to a Jupyter Notebook</li>
 <li>Bring in our own packages</li>
@@ -12063,7 +12072,7 @@ $y=mx+b$
 conda create --name myenv <span class="c1"># Run me to create a new environment</span>
 <span class="nb">source</span> activate myenv
 conda install plotly jupyter ipykernel
-pip install matplotlib jupyter-tensorboard
+pip install --user matplotlib jupyter-tensorboard
 </pre></div>
 
 </div>
@@ -12168,7 +12177,7 @@ pip install matplotlib jupyter-tensorboard
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Define-functions:">Define functions:<a class="anchor-link" href="#Define-functions:">&#182;</a></h4><p>Don't keep things in the global scope.</p>
+<h4 id="Define-functions:">Define functions:<a class="anchor-link" href="#Define-functions:">&#182;</a></h4><p>Don't keep things in the global scope. Treat each cell as a distinct function.</p>
 
 </div>
 </div>
@@ -12349,7 +12358,7 @@ pip install matplotlib jupyter-tensorboard
 
 </div>
 </div>
-</div>
+</div></section></section>
 </div>
 </div>
 

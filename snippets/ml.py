@@ -8,7 +8,7 @@ def deep_classifier():
     
     # Split into training and testing data:
     x_train, x_test, y_train, y_test = model_selection.train_test_split(
-        data, labels, test_size=0.2, random_state=42)
+        data, labels, test_size=0.2, random_state=100)
     
     feature_columns = [tf.feature_column.numeric_column('x', shape=np.array(x_train).shape[1:])] 
     
@@ -20,9 +20,9 @@ def deep_classifier():
     
     # Create a DNN classifier:
     classifier = tf.estimator.DNNClassifier(feature_columns=feature_columns, 
-            hidden_units=[1000, 100, 50, 10], n_classes=2, model_dir="model",
+            hidden_units=[1000, 100, 10], n_classes=2, model_dir="model",
             optimizer=tf.train.ProximalAdagradOptimizer(
-                learning_rate=0.001,
+                learning_rate=0.01,
                 l1_regularization_strength=0.01),
                 config=tf.estimator.RunConfig().replace(save_summary_steps=10))
     
@@ -32,3 +32,5 @@ def deep_classifier():
     scores = classifier.evaluate(input_fn=get_test_input_fn)
     
     print('Accuracy (tf.estimator): {0:f}'.format(scores['accuracy']))
+    
+    return classifier
