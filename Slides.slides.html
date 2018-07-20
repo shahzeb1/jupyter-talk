@@ -11905,6 +11905,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://jupyter.org/assets/try/jupyter.png" alt="jupyter" title="Jupyter"></p>
 <h1 id="Improving-Your-Workflow-with-Jupyter-Notebooks">Improving Your Workflow with Jupyter Notebooks<a class="anchor-link" href="#Improving-Your-Workflow-with-Jupyter-Notebooks">&#182;</a></h1><p>A talk by <strong>Shahzeb Khan</strong>.</p>
 <p>Part of <strong>Dr. Crivelli</strong>'s Lab.</p>
 <p>UC Davis Computer Science Student.</p>
@@ -12052,18 +12053,7 @@ $y=mx+b$
 
 </div>
 </div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="SSH:">SSH:<a class="anchor-link" href="#SSH:">&#182;</a></h3>
-<pre><code>ssh -L :9998:localhost:9998 -l &lt;username&gt; cori.nersc.gov</code></pre>
-<p>We will be binding our local port <code>9998</code> to the remote port <code>9998</code>.</p>
-
-</div>
-</div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12072,10 +12062,31 @@ $y=mx+b$
 <div class="highlight"><pre><span></span>module load python/3.6-anaconda-4.4
 conda create --name myenv <span class="c1"># Run me to create a new environment</span>
 <span class="nb">source</span> activate myenv
-conda install plotly jupyter 
-pip install matplotlib
-jupyter notebook --no-browser --port <span class="m">9998</span>
+conda install plotly jupyter ipykernel
+pip install matplotlib jupyter-tensorboard
 </pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Jupyter-via-CORI:">Jupyter via CORI:<a class="anchor-link" href="#Jupyter-via-CORI:">&#182;</a></h3><p>Visit the following URL:</p>
+
+<pre><code> jupyter-dev.nersc.gov</code></pre>
+<p>Login using your NERSC information.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After connected, select your environment: 
+<img src="images/selection.png" alt="selection" title="Selection"></p>
 
 </div>
 </div>
